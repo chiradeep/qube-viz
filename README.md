@@ -30,7 +30,7 @@ Discovers nodes (sources and destinations of network traffic) and edges (connect
 ``kubectl --namespace=kube-system create -f spec/qubeviz-server.yaml``
 
 ## Sample 
-[Static Website](http://kubeviz-demo.s3-website-us-east-1.amazonaws.com)
+[Static Website](http://qubeviz-demo.s3-website-us-east-1.amazonaws.com)
 
 
 ## Author
