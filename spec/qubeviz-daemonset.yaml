@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: DaemonSet                     
+metadata:
+  name: qubeviz-collector
+  labels:
+    app: qubeviz-collector
+spec:
+  template:
+    metadata:
+      labels:
+        name: qubeviz-collector
+    spec:
+      hostNetwork: true
+      containers:
+      - name: qubeviz-collector
+        image: chiradeeptest/kubeviz-collector
+        securityContext:
+         privileged: true
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: GET_HOSTS_FROM
+          value: env
+

@@ -1,0 +1,48 @@
+.links line {
+  stroke: #999;
+  stroke-opacity: 0.6;
+}
+
+.nodes circle {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+svg {
+  background-color: #ffffff;
+}
+svg .node {
+  stroke: #f6f6f6;
+  stroke-width: 1.5px;
+}
+svg .link {
+  stroke: #c6c6c6;
+  stroke-opacity: .7;
+  stroke-width: 2px;
+}
+.d3-tip {
+  line-height: 1;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 4px 6px;
+  border-radius: 2px;
+}
+
+.d3-tip-2 {
+  line-height: 1;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 4px 6px;
+  border-radius: 2px;
+}
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+

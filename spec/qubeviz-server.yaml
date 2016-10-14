@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kubeviz-server
+  labels:
+    app: kubeviz-server
+    role: web
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    app: kubeviz-server
+    role: web
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: kubeviz-server
+  labels:
+    app: kubeviz-server
+    role: web
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: kubeviz-server
+        role: web
+    spec:
+      containers:
+      - name: kubeviz-server
+        image: chiradeeptest/kubeviz-server
+        imagePullPolicy: IfNotPresent
+        name: kubeviz-server
+      - name: kubectl
+        image: kelseyhightower/kubectl:1.3.4
+        args:
+           - "proxy"
+           - "--port=8080"
