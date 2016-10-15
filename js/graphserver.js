@@ -45,7 +45,7 @@ function expireRedisData() {
 }
 
 function excludeNode(nodeName, nodeIp){
-    return nodeName.startsWith("kubeviz") || nodeName.startsWith("redis-viz") || nodeName.startsWith("kubeviz");
+    return nodeName.startsWith("qubeviz") || nodeName.startsWith("redis-viz") || nodeName.startsWith("kubeviz");
 }
 
 
