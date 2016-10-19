@@ -1,4 +1,4 @@
-NS ?= chiradeeptest/
+NS ?= chiradeep/
 VERSION ?= latest
 
 IMAGE_NAME = qubeviz-collector

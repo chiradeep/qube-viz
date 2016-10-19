@@ -13,7 +13,7 @@ spec:
       hostNetwork: true
       containers:
       - name: qubeviz-collector
-        image: chiradeeptest/kubeviz-collector
+        image: chiradeep/qubeviz-collector
         securityContext:
          privileged: true
         imagePullPolicy: IfNotPresent

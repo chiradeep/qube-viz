@@ -9,7 +9,7 @@ Discovers nodes (sources and destinations of network traffic) and edges (connect
 ## Theory of Operation
 1. Use conntrack to discover connections and endpoints of the connections on each node of the kubernetes deployment. Send this data to a store (redis in this case). Use a daemonset container to deploy this function to every node
 2. A web server merges information from the Kubernetes API and the data collected in #1 above, on demand
-3. Client-side Javascript fetches the data from #2 and displays graph.
+3. Client-side Javascript fetches the data from #2 and visualizes graph.
 
 ## Requirement
 
@@ -28,6 +28,12 @@ Discovers nodes (sources and destinations of network traffic) and edges (connect
 * Deploy web server
 
 ``kubectl --namespace=kube-system create -f spec/qubeviz-server.yaml``
+
+* Obtain the External IP of the visualization server
+
+``kubectl --namespace=kube-system get svc  qubeviz-server -o jsonpath='{.status.LoadBalancer.Ingress[].hostname}'``
+
+* Browse the visualization using any standard browser
 
 ## Sample 
 [Static Website](http://qubeviz-demo.s3-website-us-east-1.amazonaws.com)

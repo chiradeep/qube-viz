@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
       - name: qubeviz-server
-        image: chiradeeptest/kubeviz-server
+        image: chiradeep/qubeviz-server
         imagePullPolicy: IfNotPresent
         name: qubeviz-server
       - name: kubectl
